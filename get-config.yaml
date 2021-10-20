@@ -1,0 +1,24 @@
+---
+- name: Backup configuration Junos Device
+  hosts: switch
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  vars:
+    ansible_connection: "{{ ansible_connection }}"
+    ansible_port: "{{ ansible_port }}"
+    credentials:
+      host: "{{ ansible_host }}"
+      user: "{{ ansible_user }}"
+      passwd: "{{ ansible_password }}"
+
+  tasks:
+    - name: Backup is in progressing
+      juniper_junos_config:
+        provider: "{{ credentials }}"
+        retrieve: 'committed'
+        diff: false
+        check: false
+        commit: false
+        dest: "/Users/quynhnd/backup/backup/backups/{{ ansible_host }}-{{ lookup('pipe', 'date +%Y-%m-%d') }}.conf"
