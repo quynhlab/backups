@@ -1,0 +1,18 @@
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[firewall]
+10.163.128.1 ansible_host=10.163.128.1
+
+[switch]
+10.169.41.10 ansible_host=10.169.41.10
+10.163.128.2 ansible_host=10.163.128.2
+10.163.128.3 ansible_host=10.163.128.3
+10.163.128.11 ansible_host=10.163.128.11
+10.163.128.12 ansible_host=10.163.128.12
+10.163.128.21 ansible_host=10.163.128.21
+10.163.128.22 ansible_host=10.163.128.22
+10.163.128.23 ansible_host=10.163.128.23
+10.163.128.24 ansible_host=10.163.128.24
+10.163.128.25 ansible_host=10.163.128.25
+10.163.128.26 ansible_host=10.163.128.26
